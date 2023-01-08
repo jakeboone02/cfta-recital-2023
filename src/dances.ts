@@ -1,41 +1,70 @@
 export interface Dance {
   name: string;
   dancers: string[];
-  song?: string;
+  song: string;
+  artist: string;
 }
 
-export const dances = [
+export const dances: Dance[] = [
+  // {
+  //   name: 'Acro Jr A',
+  //   dancers: [
+  //     'Beugelink, Heartleigh',
+  //     'Bukowski, Maylee',
+  //     'Coates, Amelia',
+  //     'Constable, Brynn',
+  //     'Gowlovech, Capri',
+  //     'Guillory, Maryn',
+  //     'Hawley, Ellie',
+  //     'Higginbotham, Payson',
+  //     'Ritzko, Bailee',
+  //   ],
+  // },
+  // {
+  //   name: 'Acro Jr B',
+  //   dancers: [
+  //     'Brogdon, Hayden',
+  //     'Brunk, Emily',
+  //     'Burnham, Julie',
+  //     'Dulaney, Penelope',
+  //     'Haro, Amelia',
+  //     'Hayslett, Grace',
+  //     'Hester, Jillian',
+  //     'Hester, Josslyn',
+  //     'Neier, Lacey',
+  //     'Song, Evelyn',
+  //   ],
+  // },
   {
-    name: 'Acro Jr A',
+    name: 'Acro Jr',
+    song: 'We Are One',
+    artist: 'Pitbull',
     dancers: [
       'Beugelink, Heartleigh',
-      'Bukowski, Maylee',
-      'Coates, Amelia',
-      'Constable, Brynn',
-      'Gowlovech, Capri',
-      'Guillory, Maryn',
-      'Hawley, Ellie',
-      'Higginbotham, Payson',
-      'Ritzko, Bailee',
-    ],
-  },
-  {
-    name: 'Acro Jr B',
-    dancers: [
       'Brogdon, Hayden',
       'Brunk, Emily',
+      'Bukowski, Maylee',
       'Burnham, Julie',
+      'Coates, Amelia',
+      'Constable, Brynn',
       'Dulaney, Penelope',
+      'Gowlovech, Capri',
+      'Guillory, Maryn',
       'Haro, Amelia',
+      'Hawley, Ellie',
       'Hayslett, Grace',
       'Hester, Jillian',
       'Hester, Josslyn',
+      'Higginbotham, Payson',
       'Neier, Lacey',
+      'Ritzko, Bailee',
       'Song, Evelyn',
     ],
   },
   {
     name: 'Acro I',
+    song: 'The Passenger',
+    artist: 'Lumix',
     dancers: [
       'Abuhmaidan, Isla',
       'Akert, Alaina',
@@ -52,6 +81,8 @@ export const dances = [
   },
   {
     name: 'Acro 2',
+    song: 'Where are you now',
+    artist: 'Calum Scott',
     dancers: [
       'Akert, Madi',
       'Albert, Lucy',
@@ -65,6 +96,8 @@ export const dances = [
   },
   {
     name: 'Ballet I',
+    song: 'A Dream Is a Wish Your Heart Makes',
+    artist: 'Lily James',
     dancers: [
       'Armstrong, Natalie',
       'Addler, Harper',
@@ -81,28 +114,30 @@ export const dances = [
       'Young, Joanna',
     ],
   },
-  {
-    name: 'Ballet Techniques A',
-    dancers: [
-      'Balzarini, Brooke',
-      'Kambham, Arianna',
-      'Lenhart, Olivia',
-      'Wolter, Ava',
-      'Wells, Emma',
-    ],
-  },
-  {
-    name: 'Ballet Techniques B',
-    dancers: [
-      'Boone, Clara',
-      'Hunter, Lainey',
-      'Hunter, Maia',
-      'Marshall, Bailey',
-      'Rawlings, Vivian',
-    ],
-  },
+  // {
+  //   name: 'Ballet Techniques A',
+  //   dancers: [
+  //     'Balzarini, Brooke',
+  //     'Kambham, Arianna',
+  //     'Lenhart, Olivia',
+  //     'Wolter, Ava',
+  //     'Wells, Emma',
+  //   ],
+  // },
+  // {
+  //   name: 'Ballet Techniques B',
+  //   dancers: [
+  //     'Boone, Clara',
+  //     'Hunter, Lainey',
+  //     'Hunter, Maia',
+  //     'Marshall, Bailey',
+  //     'Rawlings, Vivian',
+  //   ],
+  // },
   {
     name: 'Ballet/Tap 1 Combo Wed 2:30pm (Ballet)',
+    song: 'Bloom',
+    artist: 'The Paper Kites',
     dancers: [
       'Arena, Eloise',
       'Coffee, Ellie',
@@ -118,6 +153,8 @@ export const dances = [
   },
   {
     name: 'Ballet/Tap 1 Combo Wed 2:30pm (Tap)',
+    song: 'I Like You for You',
+    artist: 'Animal Island',
     dancers: [
       'Arena, Eloise',
       'Coffee, Ellie',
@@ -133,6 +170,8 @@ export const dances = [
   },
   {
     name: 'Ballet/Tap 1 Combo Wed 4:15pm (Ballet)',
+    song: 'Cover Me in Sunshine',
+    artist: 'P!nk',
     dancers: [
       'Armenta, Jane',
       'Carlisle, Liana',
@@ -153,6 +192,8 @@ export const dances = [
   },
   {
     name: 'Ballet/Tap 1 Combo Wed 4:15pm (Tap)',
+    song: 'Sh-Boom',
+    artist: 'The Chords',
     dancers: [
       'Armenta, Jane',
       'Carlisle, Liana',
@@ -173,6 +214,8 @@ export const dances = [
   },
   {
     name: 'Ballet: Beginning Adult',
+    song: 'TBD',
+    artist: 'TBD',
     dancers: [
       'Callanan-Attebery, Christina',
       'Ellis, Dawn',
@@ -186,6 +229,8 @@ export const dances = [
   },
   {
     name: 'Contemporary I',
+    song: 'To Build A Home',
+    artist: 'Cinematic Orchestra',
     dancers: [
       'Abney, Hanna',
       'Bala, Elizabeth',
@@ -199,6 +244,8 @@ export const dances = [
   },
   {
     name: 'Contemporary 2',
+    song: 'Constellations by Ellie Holcomb',
+    artist: 'Ellie Holcomb',
     dancers: [
       'Carnahan, Emmanuelle',
       'Dollman, Coraline',
@@ -210,7 +257,9 @@ export const dances = [
     ],
   },
   {
-    name: 'Hip Hop A',
+    name: 'Hip Hop I',
+    song: 'Move Your Feet',
+    artist: 'Junior Senior',
     dancers: [
       'Akert, Alaina',
       'Balzarini, Brooke',
@@ -230,7 +279,9 @@ export const dances = [
     ],
   },
   {
-    name: 'Hip Hop B',
+    name: 'Hip Hop II',
+    song: 'The Saints',
+    artist: 'Andy Minio',
     dancers: [
       'Boone, Asher',
       'Dabas, Arnav',
@@ -246,6 +297,8 @@ export const dances = [
   },
   {
     name: 'Jazz I',
+    song: 'It Only Gets Better',
+    artist: 'WILD',
     dancers: [
       'Boyd, Gracee',
       'Bukowski, Maylee',
@@ -262,7 +315,9 @@ export const dances = [
     ],
   },
   {
-    name: 'Jazz 2/3',
+    name: 'Jazz II',
+    song: 'Dancing My Way',
+    artist: 'Wyn Starks',
     dancers: [
       'Block, Tessa',
       'Carmona, Selah',
@@ -272,7 +327,9 @@ export const dances = [
     ],
   },
   {
-    name: 'Lyrical/Modern',
+    name: 'Modern/Lyrical',
+    song: 'Grow',
+    artist: 'Frances',
     dancers: [
       'Boone, Clara',
       'Capelle, Madeline',
@@ -288,6 +345,8 @@ export const dances = [
     ],
   },
   {
+    song: 'Put On A Happy Face',
+    artist: 'Dick Van Dyke',
     name: 'Musical Theater I',
     dancers: [
       'Beliveau, Kenna',
@@ -303,7 +362,9 @@ export const dances = [
     ],
   },
   {
-    name: 'Musical Theater 2A',
+    name: 'Musical Theater III',
+    song: 'Super Trouper',
+    artist: 'ABBA',
     dancers: [
       'Boone, Clara',
       'Hunter, Lainey',
@@ -313,7 +374,9 @@ export const dances = [
     ],
   },
   {
-    name: 'Musical Theater 2B',
+    name: 'Musical Theater II',
+    song: '9 To 5',
+    artist: '',
     dancers: [
       'Bervig, Ava',
       'Bervig, Olivia',
@@ -329,6 +392,8 @@ export const dances = [
   },
   {
     name: 'Pre-Ballet & Pre-Tap Wed AM',
+    song: 'Build Me Up Buttercup',
+    artist: 'The Foundations',
     dancers: [
       'Armstrong, Crystal',
       'Arnold, Emma',
@@ -346,6 +411,8 @@ export const dances = [
   },
   {
     name: 'Pre-Ballet & Pre-Tap Wed 11',
+    song: '',
+    artist: '',
     dancers: [
       'Harrier, Alice',
       'Laun, Claire',
@@ -360,6 +427,8 @@ export const dances = [
   },
   {
     name: 'Pre-Ballet & Pre-Tap Thurs AM',
+    song: 'The Puppy Song',
+    artist: 'Harry Nilsson',
     dancers: [
       'Buckenberger, Lyncoln',
       'Cunningham, Genesis',
@@ -381,6 +450,8 @@ export const dances = [
   },
   {
     name: 'Pre-Ballet & Pre-Tap Thurs PM',
+    song: 'Up With End Credits',
+    artist: 'Michael Giacchino',
     dancers: [
       'Aja, Sophie',
       'Baldwin, Kinsley',
@@ -404,10 +475,70 @@ export const dances = [
   },
   {
     name: 'Sweetheart',
-    dancers: [],
+    song: "Those Boots (Deddy's Song)",
+    artist: 'Lainey Wilson',
+    dancers: [
+      'Aja, Sophie',
+      'Armstrong, Crystal',
+      'Arnold, Emma',
+      'Arnold, Rebecca',
+      'Baldwin, Kinsley',
+      'Bervig, Cora',
+      'Brown, Maya',
+      'Buckenberger, Lyncoln',
+      'Burnham, Amy',
+      'Campbell, Tatum',
+      'Conner, Juliana',
+      'Cunningham, Ariella',
+      'Cunningham, Genesis',
+      'Douglass, Maci',
+      'Drown, Marlowe',
+      'Dunn, Harper',
+      'Fetters, Rosabeth',
+      'Gaines, Anniston',
+      'Hansen, Jovie',
+      'Harrier, Alice',
+      'Howerton, Lennon',
+      'Jacobo, Taylor',
+      'Johnson, McKenzie',
+      'Jorbin, Amelia',
+      'Kirara, Makena',
+      'Kohutiar, Luisa',
+      'Laun, Claire',
+      'Lind, Everly',
+      'Lizama, Skylar',
+      'Lonca, Abigail',
+      'Malito, Rayah',
+      'Marshall, Audrey',
+      'Mather, Sadie',
+      'Moncrieff, Charley',
+      'Mortensen, Lucy',
+      'Musarra, Alessia',
+      'Nielsen, Penny',
+      'Page, Sadie',
+      'Prenovost, Piper',
+      'Ratiu, Hailey',
+      'Ratkovich, Amelia',
+      'Reaney, Charlotte',
+      'Riewold, Hayden',
+      'Rivera, Isla',
+      'Segura, Isa',
+      'Sethi, Saisha',
+      'Stan, Ella',
+      'Stapley, Aurora',
+      'Stefani, Nicoletta',
+      'Tacheny, Gemma',
+      'Taylor, Leelah',
+      'Thomas, Isla',
+      'Tunney, Brynn',
+      'Vetter, Addison (Addie)',
+      'Wackett, Emilia',
+    ],
   },
   {
     name: 'Tap I',
+    song: "I Won't Let You Down",
+    artist: 'OK Go',
     dancers: [
       'Bervig, Isla',
       'Brown, Rylie',
@@ -420,6 +551,8 @@ export const dances = [
   },
   {
     name: 'Tap II',
+    song: "If You're Gonna Play In Texas",
+    artist: 'Alabama',
     dancers: [
       'Bervig, Ava',
       'Bervig, Olivia',
@@ -434,6 +567,8 @@ export const dances = [
   },
   {
     name: 'Tap III',
+    song: 'Irish Song (or other?)',
+    artist: 'The Railers (or live?)',
     dancers: [
       'Boone, Asher',
       'Boone, Clara',
@@ -446,6 +581,8 @@ export const dances = [
   },
   {
     name: 'Tap: Adults',
+    song: 'Bennie and the Jets (2018)',
+    artist: 'Elton John/P!nk/Logic',
     dancers: [
       'Brown, Nicole',
       'Coloma, Rhea',
@@ -461,6 +598,8 @@ export const dances = [
   },
   {
     name: 'SpecTAPular',
+    song: 'Echo Dance?',
+    artist: 'Live?',
     dancers: [
       'Bervig, Ava',
       'Bervig, Isla',

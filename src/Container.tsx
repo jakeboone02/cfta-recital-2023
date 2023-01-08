@@ -1,23 +1,24 @@
 import produce from 'immer';
 import { useCallback, useEffect, useState } from 'react';
-
 import { Card } from './Card';
-import { Dance, dances } from './dances';
+import { Dance, dances as dancesOriginal } from './dances';
 
 const style = {
   width: 400,
 };
 
+const dances = (JSON.parse(window.localStorage.getItem('dances')!) as Dance[]) ?? dancesOriginal;
+
 export const Container = () => {
   const [cards, setCards] = useState(dances);
 
   useEffect(() => {
-    window.localStorage.setItem('dances-current', JSON.stringify(dances));
-  }, [dances]);
+    window.localStorage.setItem('dances-current', JSON.stringify(cards));
+  }, [cards]);
 
   const save = useCallback(
-    () => window.localStorage.setItem('dances', JSON.stringify(dances)),
-    [dances]
+    () => window.localStorage.setItem('dances', JSON.stringify(cards)),
+    [cards]
   );
 
   const moveCard = useCallback((dragIndex: number, hoverIndex: number) => {
@@ -26,22 +27,6 @@ export const Container = () => {
         draft.splice(dragIndex, 1);
         draft.splice(hoverIndex, 0, prevCards[dragIndex]);
       })
-    );
-  }, []);
-
-  const renderCard = useCallback((card: Dance, index: number) => {
-    const dancersInNextDance = card.dancers.filter(s => cards[index + 1]?.dancers.includes(s));
-    const dancersInDanceAfterNext = card.dancers.filter(s => cards[index + 2]?.dancers.includes(s));
-    return (
-      <Card
-        key={card.name}
-        index={index}
-        id={card.name}
-        text={card.name}
-        moveCard={moveCard}
-        dancersInNextDance={dancersInNextDance}
-        dancersInDanceAfterNext={dancersInDanceAfterNext}
-      />
     );
   }, []);
 
@@ -55,10 +40,34 @@ export const Container = () => {
         Download
       </a>
       &nbsp;
-      <button type="button" onClick={save}>
-        Save
+      <button type="button" onClick={() => setCards(dancesOriginal)}>
+        Reset
       </button>
-      <div style={style}>{cards.map(renderCard)}</div>
+      {/* <button type="button" onClick={save}>
+        Save
+      </button> */}
+      <div style={style}>
+        {cards.map((card, index) => {
+          const dancersInNextDance = card.dancers.filter(s =>
+            cards[index + 1]?.dancers.includes(s)
+          );
+          const dancersInDanceAfterNext = card.dancers.filter(s =>
+            cards[index + 2]?.dancers.includes(s)
+          );
+          return (
+            <Card
+              key={card.name}
+              isLast={index === cards.length - 1}
+              index={index}
+              id={card.name}
+              dance={card}
+              moveCard={moveCard}
+              dancersInNextDance={dancersInNextDance}
+              dancersInDanceAfterNext={dancersInDanceAfterNext}
+            />
+          );
+        })}
+      </div>
     </>
   );
 };

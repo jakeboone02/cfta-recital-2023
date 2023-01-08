@@ -1,6 +1,7 @@
 import type { Identifier, XYCoord } from 'dnd-core';
 import { useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
+import { Dance } from './dances';
 
 const CARD = 'card' as const;
 
@@ -8,14 +9,14 @@ const style = {
   border: '1px dashed gray',
   padding: '0.5rem 1rem',
   marginBottom: '0.5rem',
-  backgroundColor: 'white',
   cursor: 'move',
 };
 
 export interface CardProps {
   id: any;
-  text: string;
+  dance: Dance;
   index: number;
+  isLast: boolean;
   moveCard: (dragIndex: number, hoverIndex: number) => void;
   dancersInNextDance: string[];
   dancersInDanceAfterNext: string[];
@@ -29,13 +30,16 @@ interface DragItem {
 
 export const Card = ({
   id,
-  text,
+  dance,
   index,
+  isLast,
   moveCard,
   dancersInNextDance,
   dancersInDanceAfterNext,
 }: CardProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const previewRef = useRef<HTMLDivElement>(null);
+
   const [{ handlerId }, drop] = useDrop<DragItem, void, { handlerId: Identifier | null }>({
     accept: CARD,
     collect(monitor) {
@@ -92,19 +96,38 @@ export const Card = ({
     },
   });
 
-  const [{ isDragging }, drag] = useDrag({
+  const [{ isDragging }, drag, preview] = useDrag({
     type: CARD,
     item: () => ({ id, index }),
-    collect: (monitor: any) => ({
+    collect: monitor => ({
       isDragging: monitor.isDragging(),
     }),
   });
 
-  const opacity = isDragging ? 0 : 1;
+  const opacity = isDragging ? 0.5 : 1;
   drag(drop(ref));
+  preview(previewRef);
+
   return (
     <div ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
-      <div style={{ fontWeight: 'bold' }}>{text}</div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', gap: '0.5rem' }}>
+        <div ref={previewRef} style={{ fontWeight: 'bold' }} title={dance.dancers.join('\n')}>
+          {dance.name}
+        </div>
+        <div>
+          <button type="button" disabled={index === 0} onClick={() => moveCard(index, index - 1)}>
+            ↑
+          </button>
+          <button type="button" disabled={isLast} onClick={() => moveCard(index, index + 1)}>
+            ↓
+          </button>
+        </div>
+      </div>
+      <div style={{ color: 'gray' }}>
+        <em>
+          {dance.song} by {dance.artist}
+        </em>
+      </div>
       {dancersInNextDance.length > 0 && (
         <>
           <div style={{ marginTop: '0.5rem' }}>In next dance:</div>
