@@ -4,7 +4,7 @@ import { Card } from './Card';
 import { Dance, dances as dancesOriginal } from './dances';
 
 const style: CSSProperties = {
-  width: 400,
+  width: 444,
   display: 'flex',
   flexDirection: 'column',
   gap: '0.5rem',
