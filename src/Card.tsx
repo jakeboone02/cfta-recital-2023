@@ -8,7 +8,6 @@ const CARD = 'card' as const;
 const style = {
   border: '1px dashed gray',
   padding: '0.5rem 1rem',
-  marginBottom: '0.5rem',
   cursor: 'move',
 };
 
@@ -125,7 +124,7 @@ export const Card = ({
       </div>
       <div style={{ color: 'gray' }}>
         <em>
-          {dance.song} by {dance.artist}
+          "{dance.song}" by {dance.artist}
         </em>
       </div>
       {dancersInNextDance.length > 0 && (

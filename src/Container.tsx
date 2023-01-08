@@ -1,10 +1,13 @@
 import produce from 'immer';
-import { useCallback, useEffect, useState } from 'react';
+import { CSSProperties, useCallback, useEffect, useState } from 'react';
 import { Card } from './Card';
 import { Dance, dances as dancesOriginal } from './dances';
 
-const style = {
+const style: CSSProperties = {
   width: 400,
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.5rem',
 };
 
 const dances = (JSON.parse(window.localStorage.getItem('dances')!) as Dance[]) ?? dancesOriginal;
@@ -32,20 +35,21 @@ export const Container = () => {
 
   return (
     <>
-      <a
-        download="recital-order-2023.txt"
-        href={`data:text/plain;charset=utf-8,${encodeURIComponent(
-          cards.map(c => c.name).join('\n')
-        )}`}>
-        Download
-      </a>
-      &nbsp;
-      <button type="button" onClick={() => setCards(dancesOriginal)}>
-        Reset
-      </button>
-      {/* <button type="button" onClick={save}>
-        Save
-      </button> */}
+      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
+        <a
+          download="recital-order-2023.txt"
+          href={`data:text/plain;charset=utf-8,${encodeURIComponent(
+            cards.map(c => c.name).join('\n')
+          )}`}>
+          Download
+        </a>
+        <button type="button" onClick={() => setCards(dancesOriginal)}>
+          Reset
+        </button>
+        <button type="button" onClick={save}>
+          Save
+        </button>
+      </div>
       <div style={style}>
         {cards.map((card, index) => {
           const dancersInNextDance = card.dancers.filter(s =>

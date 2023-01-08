@@ -81,7 +81,7 @@ export const dances: Dance[] = [
   },
   {
     name: 'Acro 2',
-    song: 'Where are you now',
+    song: 'Where Are You Now',
     artist: 'Calum Scott',
     dancers: [
       'Akert, Madi',
@@ -229,7 +229,7 @@ export const dances: Dance[] = [
   },
   {
     name: 'Contemporary I',
-    song: 'To Build A Home',
+    song: 'To Build a Home',
     artist: 'Cinematic Orchestra',
     dancers: [
       'Abney, Hanna',
@@ -244,7 +244,7 @@ export const dances: Dance[] = [
   },
   {
     name: 'Contemporary 2',
-    song: 'Constellations by Ellie Holcomb',
+    song: 'Constellations',
     artist: 'Ellie Holcomb',
     dancers: [
       'Carnahan, Emmanuelle',
@@ -345,9 +345,9 @@ export const dances: Dance[] = [
     ],
   },
   {
-    song: 'Put On A Happy Face',
-    artist: 'Dick Van Dyke',
     name: 'Musical Theater I',
+    song: 'Put On a Happy Face',
+    artist: 'Dick Van Dyke',
     dancers: [
       'Beliveau, Kenna',
       'Benavides, Elishka',
@@ -551,7 +551,7 @@ export const dances: Dance[] = [
   },
   {
     name: 'Tap II',
-    song: "If You're Gonna Play In Texas",
+    song: "If You're Gonna Play in Texas",
     artist: 'Alabama',
     dancers: [
       'Bervig, Ava',
