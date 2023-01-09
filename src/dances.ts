@@ -80,7 +80,7 @@ export const dances: Dance[] = [
     ],
   },
   {
-    name: 'Acro 2',
+    name: 'Acro II',
     song: 'Where Are You Now',
     artist: 'Calum Scott',
     dancers: [
@@ -135,7 +135,7 @@ export const dances: Dance[] = [
   //   ],
   // },
   {
-    name: 'Ballet/Tap 1 Combo Wed 2:30pm (Ballet)',
+    name: 'Ballet/Tap I Combo Wed 2:30pm (Ballet)',
     song: 'Bloom',
     artist: 'The Paper Kites',
     dancers: [
@@ -152,7 +152,7 @@ export const dances: Dance[] = [
     ],
   },
   {
-    name: 'Ballet/Tap 1 Combo Wed 2:30pm (Tap)',
+    name: 'Ballet/Tap I Combo Wed 2:30pm (Tap)',
     song: 'I Like You for You',
     artist: 'Animal Island',
     dancers: [
@@ -169,7 +169,7 @@ export const dances: Dance[] = [
     ],
   },
   {
-    name: 'Ballet/Tap 1 Combo Wed 4:15pm (Ballet)',
+    name: 'Ballet/Tap I Combo Wed 4:15pm (Ballet)',
     song: 'Cover Me in Sunshine',
     artist: 'P!nk',
     dancers: [
@@ -191,7 +191,7 @@ export const dances: Dance[] = [
     ],
   },
   {
-    name: 'Ballet/Tap 1 Combo Wed 4:15pm (Tap)',
+    name: 'Ballet/Tap I Combo Wed 4:15pm (Tap)',
     song: 'Sh-Boom',
     artist: 'The Chords',
     dancers: [
@@ -243,7 +243,7 @@ export const dances: Dance[] = [
     ],
   },
   {
-    name: 'Contemporary 2',
+    name: 'Contemporary II',
     song: 'Constellations',
     artist: 'Ellie Holcomb',
     dancers: [
