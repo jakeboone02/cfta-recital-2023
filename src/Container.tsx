@@ -15,7 +15,9 @@ const dances = (JSON.parse(window.localStorage.getItem('dances')!) as Dance[]) ?
 export const Container = () => {
   const [cards, setCards] = useState(dances);
 
-  const textList = cards.map(c => `${c.name}\t${c.song} by ${c.artist}`).join('\n');
+  const textList = cards
+    .map(c => `${c.name}\t${c.song} by ${c.artist}\t${c.dancers.join('\t')}`)
+    .join('\n');
 
   useEffect(() => {
     window.localStorage.setItem('dances', JSON.stringify(cards));
