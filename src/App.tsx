@@ -1,6 +1,6 @@
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import produce from 'immer';
+import { produce } from 'immer';
 import { CSSProperties, useCallback, useEffect, useState } from 'react';
 import { Card } from './Card';
 import { Dance, dances as dancesOriginal } from './dances';
